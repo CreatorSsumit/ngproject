@@ -1,0 +1,26 @@
+<form   #form='ngForm' (submit)='onsubmit()'>
+
+    <div>
+        <input name="userid" ngModel type="number"  placeholder="userid" />
+    <input name="title" ngModel type="text" placeholder="title" />
+    <input name="id" ngModel type="number" placeholder="id" />
+    <br>
+    <textarea name="body"></textarea>
+
+    <button type="submit">submit</button>
+   
+    </div>
+    
+</form>
+<br>
+
+<div *ngFor="let item of Posts" >
+    <li class="list-group-item list-group-item-{{item.color}}">
+        <span class="badge badge-primary">{{item.userId}}</span>
+        <strong>{{item.id}}</strong>
+        <h5>{{item.title}}  | </h5>
+        <h6>{{item.body}}</h6>
+        <button class="btn btn-danger" *ngIf='isbtnnone'  (click)='ondeletepost(item.id)'>delete</button>
+    </li>
+
+</div>

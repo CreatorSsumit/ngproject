@@ -1,0 +1,11 @@
+<input  [(ngModel)]="filtervalue" />
+
+<div *ngFor="let item of Business | filter : filtervalue : 'status'">
+
+  <div [ngStyle]="{'background-color': getcolor(item.status) }" style="min-height: 20px;padding: 6px 10px;margin-bottom: 5px;text-align: center;"> 
+
+    {{item.type | uppercase}} {{item.name | lowercase | shorten:5}} {{item.status}} {{item.started | date : 'fullDate' : 'dd/mm/yy' | uppercase}}
+</div>
+
+    
+</div>
